@@ -1,0 +1,28 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll",
+    "sec:sast": "./node_modules/.bin/eslint",
+    "sec:sca": "npm audit",
+    "sec:all": "npm run sec:sast && npm run sec:sca"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "globals": "^15.4.0",
+    "jest": "^29.7.0",
+    "mongoose-mock": "^0.4.0",
+    "prettier": "^3.3.1"
+  }
+}

@@ -1,0 +1,28 @@
+
+### 
+curl http://localhost:3000/books
+
+###
+curl -X POST \
+  http://localhost:3000/books \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "pages": 180,
+    "rating": 4.5
+}'
+
+
+###
+curl -X POST \
+  http://localhost:3000/books \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "The Great vim",
+    "author": "Oda Scott Fitzgerald",
+    "genre": "Fiction",
+    "pages": 180,
+    "rating": 4.5
+}'
