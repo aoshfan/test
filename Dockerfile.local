@@ -10,6 +10,11 @@ ARG NODE_VERSION=20.14.0
 
 FROM node:${NODE_VERSION}-bullseye-slim
 
+# Add Tini
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+
 # Use production node environment by default.
 ENV NODE_ENV local
 
@@ -29,10 +34,6 @@ EXPOSE 3000
 
 ENV PATH /src/node_modules/.bin:$PATH
 
-# Add Tini
-ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 # Run the application.
